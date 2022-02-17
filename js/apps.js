@@ -1,8 +1,11 @@
+
 document.getElementById('calculate-button').addEventListener('click', function () {
 
       const clothesInput = document.getElementById('clothes-input');
       const clothesAmountText = clothesInput.value;
       const clothesAmount = parseFloat(clothesAmountText);
+
+
 
 
       const rentInput = document.getElementById('rent-input');
@@ -24,7 +27,7 @@ document.getElementById('calculate-button').addEventListener('click', function (
       const incomeAmountText = incomeInput.value;
       const incomeAmount = parseFloat(incomeAmountText)
       const totalIncome = incomeAmount - totalCost;
-      console.log(totalIncome)
+
 
       const balanceTotal = document.getElementById('balance-total')
       const balanceAmountText = balanceTotal.innerText;
