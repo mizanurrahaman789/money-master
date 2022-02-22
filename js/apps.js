@@ -40,7 +40,7 @@ document.getElementById('calculate-button').addEventListener('click', function (
       clothesInput.value = '';
       rentInput.value = '';
       foodInput.value = '';
-      incomeInput.value = '';
+      // incomeInput.value = '';
 
 
 
@@ -50,30 +50,40 @@ document.getElementById('calculate-button').addEventListener('click', function (
 
 
 document.getElementById('total-save').addEventListener('click', function () {
+      const totalAmount = document.getElementById('total-amount');
+      const totalAmountText = totalAmount.value;
+      const totalAmountTextNumber = parseFloat(totalAmountText)
+      const totalAmountNumber = totalAmountTextNumber / 100
 
       const incomeInput = document.getElementById('income-input')
       const incomeAmountText = incomeInput.value;
       const incomeAmount = parseFloat(incomeAmountText)
-      // const totalIncome = incomeAmount - totalCost;
+      const incomeNumber = incomeAmount * totalAmountNumber;
 
 
-      const balanceTotalAmount = document.getElementById('total-amount');
-      const balanceTotalAmountText = balanceTotalAmount.value;
-      // console.log(balanceTotalAmountText)
-      const totalBalanceTotalAmountText = parseFloat(balanceTotalAmountText)
-      const previousBalanceAmount = totalBalanceTotalAmountText / incomeAmount;
-      console.log(previousBalanceAmount)
-
-      //saveing amount update
-      const saveingAmount = document.getElementById('saveing-amount');
+      const saveingAmount = document.getElementById("saveing-amount");
       const saveingAmountText = saveingAmount.innerText;
-      const saveingAmountTotal = parseFloat(saveingAmountText);
-      saveingAmount.innerText = saveingAmountTotal + previousBalanceAmount;
-      //remaining balance update
-      const remainingBalance = document.getElementById('remaining-balance')
-      const remainingBalanceAmount = remainingBalance.innerText;
-      const remainingAmount = parseFloat(remainingBalanceAmount);
-      remainingBalance = balanceAmount - saveingAmount;
+      const saveingAmountTextNumber = parseFloat(saveingAmountText)
+      saveingAmount.innerText = saveingAmountTextNumber + incomeNumber;
 
-      balanceTotalAmount.value = '';
+      const balanceTotal = document.getElementById('balance-total')
+      const balanceAmountText = balanceTotal.innerText;
+      const balanceAmount = parseFloat(balanceAmountText);
+
+      const balanceCost = balanceAmount - saveingAmount.innerText;
+
+
+
+      const remainingBalance = document.getElementById('remaining-balance');
+      const remainingBalanceText = remainingBalance.innerText;
+      const remainingBalanceAmountNumber = parseFloat(remainingBalanceText)
+      remainingBalance.innerText = remainingBalanceAmountNumber + balanceCost;
+
+
+
 })
+
+
+
+
+

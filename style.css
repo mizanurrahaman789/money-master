@@ -5,6 +5,8 @@
       background: #e2e2e6;
       height: 100vh;
   }
+
+  /* container section */
   .container {
         width: 80%;
         margin-top: 30px;
@@ -17,7 +19,7 @@
         margin-bottom: 35px;
   }
   
-  
+  /* image area */
   .image-area img{
       width:100%;
       height: 90vh;
@@ -25,7 +27,7 @@
         margin-top: 10px;
         margin-bottom: 40px;
   }
-
+/* form section */
   .form-section{
       
       width:100%;
@@ -45,7 +47,7 @@
     font-size: 18px;
     font-weight: bold;
 }
-  
+ /* save area  */
 .save-area input{
     width: 120px;
     height: 25px;
@@ -54,6 +56,7 @@
 .save-area button{
     background-color: crimson; 
 }
+
 .income input{
     width: 220px;
     height: 25px;
